@@ -10,36 +10,63 @@
 </head>
 <body>
   <div id="header">
-    <h1>Col Collective: <i>Le Tour's Iconic Climbs</i></h1>
+    <h1>Col Collective: <i>Climbs of the Grand Tours</i></h1>
   </div>
   <div id="sub-header">
     <h2>Input Climb Information</h2>
   </div>
   <form id="form-input">
-    <!-- <div class="row"> -->
-    <!-- <div class="side"> -->
-    <div class="form-item">
-      <label for="climb" class="primary">climb:</label>
-      <input type="text" id="climb" required/>
-    </div>
-    <div class="form-item">
-      <label for="distance" class="primary">distance:</label>
-      <input type="text" id="distance" required/>
-    </div>
-    <div class="form-item">
-      <label for="gradient" class="primary">gradient:</label>
-      <input type="text" id="gradient" required/>
-    </div>
-      <input type="submit" value="save"/>
-      <!-- </div> -->
-  </form>
+    <div class="row">
+      <div class="side">
 
+        <!-- <div class="form-item">
+          <fieldset id="country">
+            <legend>Select a Country</legend>
+            <input type="radio" name="country" value="france" />
+            <label for="france">France</label>
+            <input type="radio" name="country" value="italy" />
+            <label for="italy">Italy</label>
+            <input type="radio" name="country" value="spain" />
+            <label for="spain">Spain</label>
+          </fieldset>
+        </div> -->
 
+        <div class="form-item">
+          <label for="options" class="primary">Select Grand Tour</label>
+          <select id="options">
+            <option value="" disabled selected>-- select tour --</option>
+            <option value="Tour de France">Tour de France</option>
+            <option value="Giro d'Italia">Giro d'Italia</option>
+            <option value="Vuelta Espana">Vuelta Espana</option>
+          </select>
+        </div>
 
+        <div class="form-item">
+          <label for="climb" class="primary">Climb:</label>
+          <input type="text" id="climb" required/>
+        </div>
+
+        <div class="form-item">
+          <label for="distance" class="primary">Distance:</label>
+          <input type="text" id="distance" required/>
+        </div>
+
+        <div class="form-item">
+          <label for="gradient" class="primary">Gradient:</label>
+          <input type="text" id="gradient" required/>
+        </div>
+
+        <input id="button" type="submit" value="Save"/>
+        <input type="button" id="deleteAll" value="Clear All">
+
+      </div>
+    </form>
     <div class="main">
       <table id="table">
         <thead>
           <tr>
+            <!-- <th>Country</th> -->
+            <th>Tour</th>
             <th>Name</th>
             <th>Distance</th>
             <th>Ave Gradient</th>
@@ -47,6 +74,8 @@
         </thead>
         <tbody>
           <tr id="table-input">
+            <!-- <td class="country"></td> -->
+            <td class="tour"></td>
             <td class="climb"></td>
             <td class="distance"></td>
             <td class="gradient"></td>
@@ -54,6 +83,9 @@
         </tbody>
       </table>
     </div>
+  </div>
+  <div id="footer">
+    <h3>bellvelo</h3>
   </div>
 </body>
 </html>
