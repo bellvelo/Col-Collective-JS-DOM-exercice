@@ -18,19 +18,17 @@
   <form id="form-input">
     <div class="row">
       <div class="side">
-
-        <!-- <div class="form-item">
+        <div class="form-item">
           <fieldset id="country">
             <legend>Select a Country</legend>
-            <input type="radio" name="country" value="france" />
+            <input type="radio" id="france" name="country" value="France" />
             <label for="france">France</label>
-            <input type="radio" name="country" value="italy" />
+            <input type="radio" id="italy" name="country" value="Italy" />
             <label for="italy">Italy</label>
-            <input type="radio" name="country" value="spain" />
+            <input type="radio" id="spain" name="country" value="Spain" />
             <label for="spain">Spain</label>
           </fieldset>
-        </div> -->
-
+        </div>
         <div class="form-item">
           <label for="options" class="primary">Select Grand Tour</label>
           <select id="options">
@@ -56,7 +54,7 @@
           <input type="text" id="gradient" required/>
         </div>
 
-        <input id="button" type="submit" value="Save"/>
+        <input type="submit" id="button"  value="Save"/>
         <input type="button" id="deleteAll" value="Clear All">
 
       </div>
@@ -65,22 +63,14 @@
       <table id="table">
         <thead>
           <tr>
-            <!-- <th>Country</th> -->
+            <th>Country</th>
             <th>Tour</th>
             <th>Name</th>
             <th>Distance</th>
             <th>Ave Gradient</th>
           </tr>
         </thead>
-        <tbody>
-          <tr id="table-input">
-            <!-- <td class="country"></td> -->
-            <td class="tour"></td>
-            <td class="climb"></td>
-            <td class="distance"></td>
-            <td class="gradient"></td>
-          </tr>
-        </tbody>
+        <tbody id="table-input"></tbody>
       </table>
     </div>
   </div>

@@ -1,37 +1,20 @@
+// APPEND THE FORM DATA'S TO THE NEWLY CREATED DIV //
+const appendDataToTable = function(newRow, climbElement, distanceElement, gradientElement, tourElement, countryElement){
+  newRow.appendChild(tourElement)
+  newRow.appendChild(countryElement)
+  newRow.appendChild(climbElement)
+  newRow.appendChild(distanceElement)
+  newRow.appendChild(gradientElement)
+  //  THEN ACCESS THE HTML DIV WE WANT TO UPDATE AND ASSIGN IT A VARIABLE //
+  const newTable = document.querySelector('#table-input')
+  // THEN ADD THE NEW ELEMENTS TO THE DIV AND THE DOM//
+  newTable.appendChild(newRow)
+  // const form = document.querySelector('#new-item-form');
+  // form.reset() // another method to reset the form
+}
 
-const appendFirstCell = function (newCellOne, climbElement){
-  newCellOne.appendChild(climbElement)
-const firstCell = document.querySelector('.climb');
-firstCell.appendChild(newCellOne)
-// debugger
-}
-const appendSecondCell = function (newCellTwo, distanceElement){
-  newCellTwo.appendChild(distanceElement)
-const secondCell = document.querySelector('.distance');
-secondCell.appendChild(newCellTwo)
-}
-const appendThirdCell = function (newCellThree, gradientElement){
-  newCellThree.appendChild(gradientElement)
-const thirdCell = document.querySelector('.gradient');
-thirdCell.appendChild(newCellThree)
-}
-const appendFourthCell = function (newCellFour, tourElement){
-  newCellFour.appendChild(tourElement)
-const fourthCell = document.querySelector('.tour');
-fourthCell.appendChild(newCellFour)
-}
-// const appendFifthCell = function (newCellFive, countryElement){
-//   newCellFive.appendChild(countryElement)
-// const fifthCell = document.querySelector('.country');
-// fifthCell.appendChild(newCellFive)
-// }
-
-const createNewRow = function(tour, climb, distance, gradient){
-  const newCellOne = document.createElement('tr');
-  const newCellTwo = document.createElement('tr');
-  const newCellThree = document.createElement('tr');
-  const newCellFour = document.createElement('tr');
-  // const newCellFive = document.createElement('tr');
+const createNewRow = function(tour, climb, distance, gradient, country){
+  const newRow = document.createElement('tr');
 
   const climbElement = document.createElement('td')
   climbElement.textContent = climb;
@@ -41,26 +24,11 @@ const createNewRow = function(tour, climb, distance, gradient){
   gradientElement.textContent = gradient;
   const tourElement = document.createElement('td')
   tourElement.textContent = tour;
-  // const countryElement = document.createElement('td')
-  // tourElement.textContent = country;
+  const countryElement = document.createElement('td')
+  countryElement.textContent = country;
 
-  appendFirstCell(newCellOne, climbElement);
-  appendSecondCell(newCellTwo, distanceElement);
-  appendThirdCell(newCellThree, gradientElement);
-  appendFourthCell(newCellFour, tourElement);
-  // appendFifthCell(newCellFive, countryElement);
+  appendDataToTable(newRow, climbElement, distanceElement, gradientElement, tourElement, countryElement)
 }
-
-// const createNewRow = function(climb, distance, gradient){
-//   const newTable = document.createElement('tr');
-//   const climbElement = document.createElement('td')
-//   climbElement.textContent = climb;
-//   const distanceElement = document.createElement('td')
-//   distanceElement.textContent = distance;
-//   const gradientElement = document.createElement('td')
-//   gradientElement.textContent = gradient;
-//   appendDataToTable(newTable, climbElement, distanceElement, gradientElement);
-// }
 
 const handleSubmit = function(event){
   event.preventDefault();
@@ -69,10 +37,10 @@ const handleSubmit = function(event){
   const climb = event.target.climb.value;
   const distance = event.target.distance.value;
   const gradient = event.target.gradient.value;
-  // const country = event.target.country.value;
+  const country = event.target.country.value;
   // debugger
-  // console.dir(event)
-  createNewRow(tour, climb, distance, gradient);
+  console.log(event.target.country.value)
+  createNewRow(tour, climb, distance, gradient, country);
 
   const form = event.target;
   form.reset();
